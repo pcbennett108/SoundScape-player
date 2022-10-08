@@ -1,18 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-/* const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": process.env.VITE_SHAZAM_CORE_RAPID_API_KEY,
-    "X-RapidAPI-Host": "shazam-core.p.rapidapi.com",
-  },
-}; */
-
-/* fetch("https://shazam-core.p.rapidapi.com/v1/charts/world", options)
-  .then((response) => response.json())
-  .then((response) => console.log(response))
-  .catch((err) => console.error(err)); */
-
 export const shazamCoreApi = createApi({
   reducerPath: "shazamCoreApi",
   baseQuery: fetchBaseQuery({
@@ -20,7 +7,7 @@ export const shazamCoreApi = createApi({
     prepareHeaders: (headers) => {
       headers.set(
         "X-RapidAPI-Key",
-        "5fb0c6c625mshde5936b40bee21ep151500jsnae61a755ab08"
+        import.meta.env.VITE_SHAZAM_CORE_RAPID_API_KEY
       );
       return headers;
     },
@@ -58,7 +45,3 @@ export const {
   useGetSongsByCountryQuery,
   useGetSongsBySearchQuery,
 } = shazamCoreApi;
-
-/* process.env.VITE_SHAZAM_CORE_RAPID_API_KEY */
-
-// 2:45:00
